@@ -54,3 +54,11 @@ tasks:
           open -a Docker
         fi
 
+  editorconfig:
+    cmds:
+      - cp ../dotfiles/editorconfig ~/.editorconfig
+
+  google-cloud-sdk:
+    cmds:
+      - task: brewinstall
+        vars: { NAME: google-cloud-sdk, BREW_FLAGS: '--cask' }

@@ -14,3 +14,5 @@ tasks:
       - task: os-tasks:git
       - task: os-tasks:direnv
       - task: os-tasks:docker
+      - task: os-tasks:editorconfig
+      - task: os-tasks:google-cloud-sdk
