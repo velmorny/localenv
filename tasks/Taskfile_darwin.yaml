@@ -34,3 +34,8 @@ tasks:
         vars: { NAME: grep }
       - task: brewinstall
         vars: { NAME: gzip }
+
+  git:
+    cmds:
+      - task: brewinstall
+        vars: { NAME: git }
