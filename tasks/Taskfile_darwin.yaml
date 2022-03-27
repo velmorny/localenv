@@ -62,3 +62,12 @@ tasks:
     cmds:
       - task: brewinstall
         vars: { NAME: google-cloud-sdk, BREW_FLAGS: '--cask' }
+
+  dotfiles:
+    cmds:
+      - |
+        mkdir -p ~/local/devenv/
+        cp -rfP ../dotfiles ~/
+        ln -sf ~/dotfiles/apply.sh ~/local/devenv/apply.sh
+        ln -sf ~/dotfiles/.zshenv ~/.zshenv
+        ln -sf ~/dotfiles/.zsh ~/.zsh

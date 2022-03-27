@@ -16,3 +16,4 @@ tasks:
       - task: os-tasks:docker
       - task: os-tasks:editorconfig
       - task: os-tasks:google-cloud-sdk
+      - task: os-tasks:dotfiles
