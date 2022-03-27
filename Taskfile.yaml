@@ -1,0 +1,13 @@
+---
+version: '3'
+
+includes:
+  os-tasks:
+    taskfile: ./tasks/Taskfile_{{OS}}.yaml
+    dir: ./tasks/
+
+tasks:
+  apply:
+    desc: Setting up local development environment
+    cmds:
+      - task: os-tasks:test
