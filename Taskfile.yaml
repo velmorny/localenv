@@ -10,4 +10,4 @@ tasks:
   apply:
     desc: Setting up local development environment
     cmds:
-      - task: os-tasks:test
+      - task: os-tasks:normalize

@@ -1,6 +1,36 @@
 version: '3'
 
 tasks:
-  test:
+  brewinstall:
+    desc: Install packages
+    label: '{{.TASK}}{{if .Name}} - {{.NAME}}{{end}}'
+    vars:
+      BREW_FLAGS: '{{default "--formula" .BREW_FLAGS}}'
+      CHECK:
+        sh: brew list {{.BREW_FLAGS}} '{{.NAME}}' || echo ''
     cmds:
-      - echo "TESTTEST"
+      - brew list {{.BREW_FLAGS}} '{{.NAME}}'
+    status:
+      - test -n '{{.CHECK}}'
+
+  normalize:
+    desc: Use GNU commands
+    cmds:
+      - task: brewinstall
+        vars: { NAME: coreutils }
+      - task: brewinstall
+        vars: { NAME: diffutils }
+      - task: brewinstall
+        vars: { NAME: ed }
+      - task: brewinstall
+        vars: { NAME: findutils }
+      - task: brewinstall
+        vars: { NAME: gawk }
+      - task: brewinstall
+        vars: { NAME: gnu-sed }
+      - task: brewinstall
+        vars: { NAME: gnu-tar }
+      - task: brewinstall
+        vars: { NAME: grep }
+      - task: brewinstall
+        vars: { NAME: gzip }
