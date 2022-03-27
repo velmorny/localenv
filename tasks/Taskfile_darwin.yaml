@@ -3,13 +3,13 @@ version: '3'
 tasks:
   brewinstall:
     desc: Install packages
-    label: '{{.TASK}}{{if .Name}} - {{.NAME}}{{end}}'
+    label: '{{.TASK}}{{if .NAME}} - {{.NAME}}{{end}}'
     vars:
       BREW_FLAGS: '{{default "--formula" .BREW_FLAGS}}'
       CHECK:
         sh: brew list {{.BREW_FLAGS}} '{{.NAME}}' || echo ''
     cmds:
-      - brew list {{.BREW_FLAGS}} '{{.NAME}}'
+      - brew install {{.BREW_FLAGS}} '{{.NAME}}'
     status:
       - test -n '{{.CHECK}}'
 
@@ -39,3 +39,18 @@ tasks:
     cmds:
       - task: brewinstall
         vars: { NAME: git }
+
+  direnv:
+    cmds:
+      - task: brewinstall
+        vars: { NAME: direnv }
+
+  docker:
+    cmds:
+      - task: brewinstall
+        vars: { NAME: docker, BREW_FLAGS: '--cask' }
+      - |
+        if [[ ! -d ~/.docker ]]; then
+          open -a Docker
+        fi
+

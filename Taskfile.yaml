@@ -11,3 +11,6 @@ tasks:
     desc: Setting up local development environment
     cmds:
       - task: os-tasks:normalize
+      - task: os-tasks:git
+      - task: os-tasks:direnv
+      - task: os-tasks:docker
