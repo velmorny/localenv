@@ -7,4 +7,4 @@ local_green="%F{113}"
 local_reset="%f"
 
 # set prompt
-PROMPT=$'\n%{$local_green%}%~%{$local_reset%}\n%(?.%{%F{white}%}.%{$local_red%})%(!.#.>) '
+PROMPT=$'\n%{$local_green%}%~%{$local_reset%}\n%(?.%{%F{white}%}.%{$local_red%})%(!.#.>)%{$local_reset%} '
