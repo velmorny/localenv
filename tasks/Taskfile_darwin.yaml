@@ -56,7 +56,7 @@ tasks:
 
   editorconfig:
     cmds:
-      - cp ../dotfiles/editorconfig ~/.editorconfig
+      - cp -fP ../dotfiles/editorconfig ~/.editorconfig
 
   google-cloud-sdk:
     cmds:
@@ -70,4 +70,4 @@ tasks:
         cp -rfP ../dotfiles ~/
         ln -sf ~/dotfiles/apply.sh ~/local/devenv/apply.sh
         ln -sf ~/dotfiles/.zshenv ~/.zshenv
-        ln -sf ~/dotfiles/.zsh ~/.zsh
+        ln -sf ~/dotfiles/.zsh ~/
