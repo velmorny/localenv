@@ -6,12 +6,15 @@ tasks:
     label: '{{.TASK}}{{if .NAME}} - {{.NAME}}{{end}}'
     vars:
       BREW_FLAGS: '{{default "--formula" .BREW_FLAGS}}'
-      CHECK:
+      INSTALLED:
         sh: brew list {{.BREW_FLAGS}} '{{.NAME}}' || echo ''
+      OUTDATED:
+        sh: brew outdated {{.BREW_FLAGS}} '{{.NAME}}' || echo ''
     cmds:
       - brew install {{.BREW_FLAGS}} '{{.NAME}}'
     status:
-      - test -n '{{.CHECK}}'
+      - test -n '{{.INSTALLED}}'
+      - test ! -n '{{.OUTDATED}}' 
 
   normalize:
     desc: Use GNU commands
@@ -34,6 +37,10 @@ tasks:
         vars: { NAME: grep }
       - task: brewinstall
         vars: { NAME: gzip }
+      - task: brewinstall
+        vars: { NAME: go }
+      - task: brewinstall
+        vars: { NAME: neovim }
 
   git:
     cmds:
