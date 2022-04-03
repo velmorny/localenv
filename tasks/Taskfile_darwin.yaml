@@ -61,10 +61,6 @@ tasks:
           open -a Docker
         fi
 
-  editorconfig:
-    cmds:
-      - cp -fP ../dotfiles/editorconfig ~/.editorconfig
-
   google-cloud-sdk:
     cmds:
       - task: brewinstall
@@ -76,5 +72,7 @@ tasks:
         mkdir -p ~/local/devenv/
         cp -rfP ../dotfiles ~/
         ln -sf ~/dotfiles/apply.sh ~/local/devenv/apply.sh
+        ln -sf ~/dotfiles/.editorconfig ~/.editorconfig
         ln -sf ~/dotfiles/.zshenv ~/.zshenv
         ln -sf ~/dotfiles/.zsh ~/
+        ln -sf ~/dotfiles/.config/nvim ~/.config/
