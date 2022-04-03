@@ -1,0 +1,10 @@
+# dien
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Colorshema
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/iceberg.rc.lua
+'''
