@@ -16,3 +16,8 @@ tasks:
       - task: os-tasks:docker
       - task: os-tasks:google-cloud-sdk
       - task: os-tasks:dotfiles
+
+  dotfiles:
+    desc: Apply only dotfiles for test
+    cmds:
+      - task: os-tasks:dotfiles

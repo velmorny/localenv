@@ -1,32 +1,28 @@
--- Glocal options
-vim.o.ruler = true
-vim.o.title = true
-vim.o.wildmenu = true
-vim.o.showcmd = true
-vim.o.smartcase = true
-vim.o.hlsearch = true
-vim.o.incsearch = true
-vim.o.hidden = true
-vim.o.showmatch = true
-vim.o.splitright = true
-vim.o.splitbelow = true
-vim.o.equalalways = false
-vim.o.cmdheight = 2
-vim.o.whichwrap = 'b,s,h,l,<,>,~,[,]'
-vim.o.clipboard = 'unnamedplus'
-
--- Buffer local options
-vim.bo.swapfile = false
-vim.bo.autoindent = true
-vim.bo.smartindent = true
-
--- Window local options
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.cursorline = true
-vim.wo.list = true
-vim.wo.wrap = false
-vim.wo.listchars = 'tab:¦_'
+-- Neovim options
+vim.opt.ruler = true
+vim.opt.title = true
+vim.opt.wildmenu = true
+vim.opt.showcmd = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.hidden = true
+vim.opt.showmatch = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.equalalways = false
+vim.opt.swapfile = false
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.list = true
+vim.opt.wrap = false
+vim.opt.cmdheight = 2
+vim.opt.whichwrap = 'b,s,h,l,<,>,~,[,]'
+vim.opt.listchars = 'tab:¦_'
+vim.opt.clipboard:append{'unnamedplus'}
 
 -- Other options
 ---- highlight zenkaku space
