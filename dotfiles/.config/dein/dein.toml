@@ -6,5 +6,5 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 hook_add = '''
-source ~/.config/nvim/plugins/iceberg.rc.lua
+source ~/.config/nvim/lua/plugins/iceberg.lua
 '''

@@ -32,9 +32,9 @@ if (vim.fn['dein#check_install']() ~= 0) then
   vim.fn['dein#install']()
 end
 
-require('dein')
-require('options')
-require('keymaps')
+require('core.dein')
+require('core.options')
+require('core.keymaps')
 
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
