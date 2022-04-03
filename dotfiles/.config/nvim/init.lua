@@ -7,6 +7,9 @@ vim.cmd('augroup END')
 vim.cmd('filetype off')
 vim.cmd('syntax off')
 
+vim.g.python_host_prog = vim.fn.expand('/usr/local/bin/python2')
+vim.g.python3_host_prog = vim.fn.expand('/usr/local/bin/python3')
+
 vim.g.cache_home = vim.fn.expand('$HOME/.cache')
 vim.g.config_home = vim.fn.expand('$HOME/.config')
 local dein_cache_dir = vim.g.cache_home .. '/dein'

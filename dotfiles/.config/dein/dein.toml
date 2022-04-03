@@ -18,3 +18,15 @@ repo = 'preservim/nerdcommenter'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/nerdcommenter.lua
 '''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/gitgutter.lua
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/fugitive.lua
+'''
