@@ -1,10 +1,20 @@
-# dien
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# Colorshema
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/iceberg.lua
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'preservim/nerdcommenter'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/nerdcommenter.lua
 '''
