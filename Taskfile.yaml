@@ -12,7 +12,6 @@ tasks:
     cmds:
       - task: os-tasks:normalize
       - task: os-tasks:tools
-      - task: os-tasks:direnv
       - task: os-tasks:docker
       - task: os-tasks:google-cloud-sdk
       - task: os-tasks:dotfiles

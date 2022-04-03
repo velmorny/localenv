@@ -49,9 +49,6 @@ tasks:
         vars: { NAME: git }
       - task: brewinstall
         vars: { NAME: ripgrep }
-
-  direnv:
-    cmds:
       - task: brewinstall
         vars: { NAME: direnv }
 
