@@ -14,7 +14,7 @@ tasks:
       - brew install {{.BREW_FLAGS}} '{{.NAME}}'
     status:
       - test -n '{{.INSTALLED}}'
-      - test ! -n '{{.OUTDATED}}' 
+      - test ! -n '{{.OUTDATED}}'
 
   normalize:
     desc: Use GNU commands
@@ -37,15 +37,18 @@ tasks:
         vars: { NAME: grep }
       - task: brewinstall
         vars: { NAME: gzip }
+
+  tools:
+    desc: Install tools for development
+    cmds:
       - task: brewinstall
         vars: { NAME: go }
       - task: brewinstall
         vars: { NAME: neovim }
-
-  git:
-    cmds:
       - task: brewinstall
         vars: { NAME: git }
+      - task: brewinstall
+        vars: { NAME: ripgrep }
 
   direnv:
     cmds:

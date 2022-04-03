@@ -30,3 +30,16 @@ repo = 'tpope/vim-fugitive'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/fugitive.lua
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/telescope.lua
+'''
+depends = ['plenary.nvim']
