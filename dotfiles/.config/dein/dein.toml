@@ -43,3 +43,9 @@ hook_add = '''
 source ~/.config/nvim/lua/plugins/telescope.lua
 '''
 depends = ['plenary.nvim']
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/telescope.lua
+'''
