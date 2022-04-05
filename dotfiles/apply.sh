@@ -37,6 +37,9 @@ if command -v direnv 2>&1 >/dev/null; then
   eval "$(direnv hook "${SHELL_TYPE}")"
 fi
 
+## golang
+export PATH=$PATH:$(go env GOPATH)/bin
+
 ## for google cloud sdk
 path_inc="${brew_prefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.${SHELL_TYPE}.inc"
 completion_inc="${brew_prefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.${SHELL_TYPE}.inc"

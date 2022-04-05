@@ -1,12 +1,12 @@
-local util = require "lspconfig/util"
+local util = require 'lspconfig/util'
 local servers = {}
 
 -- options
 ---- golang
 local golang_settings = {
-  cmd = {"gopls", "serve"},
-  filetypes = {"go", "gomod", "gotmpl"},
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  cmd = {'gopls', 'serve'},
+  filetypes = {'go', 'gomod', 'gotmpl'},
+  root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
   single_file_support = true,
   settings = {
     gopls = {
@@ -17,7 +17,7 @@ local golang_settings = {
     }
   },
 }
-servers["gopls"] = golang_settings
+servers['gopls'] = golang_settings
 
 -- key mappings
 local on_attach = function(client, bufnr)
