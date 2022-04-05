@@ -38,8 +38,23 @@ end
 vim.cmd('autocmd BufWritePre *.go lua orgimports(1000)')
 
 -- key mappings
+local function t(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+function _G.smart_tab()
+    return vim.fn.pumvisible() == 1 and t'<C-n>' or t'<Tab>'
+end
+
+function _G.smart_stab()
+    return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<S-Tab>'
+end
+
+vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_stab()', { expr = true, noremap = true })
+vim.cmd('autocmd FileType go,gomod,gotmpl setlocal omnifunc=v:lua.vim.lsp.omnifunc')
+
 local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua:vim.lsp.omnifunc')
   local opts = { noremap=true, silent=true }
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[lsp]', '', { noremap = true })
   vim.api.nvim_buf_set_keymap(bufnr, 'n', ' j', '[lsp]', {})

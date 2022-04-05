@@ -22,6 +22,7 @@ vim.opt.wrap = false
 vim.opt.cmdheight = 2
 vim.opt.updatetime = 1500
 vim.opt.whichwrap = 'b,s,h,l,<,>,~,[,]'
+vim.opt.completeopt = 'menuone,noinsert,noselect'
 vim.opt.listchars = 'tab:¦_'
 vim.opt.clipboard:append{'unnamedplus'}
 
