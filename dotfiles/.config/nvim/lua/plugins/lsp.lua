@@ -4,6 +4,8 @@ local servers = {}
 -- options
 ---- golang
 local golang_settings = {
+  -- debug mode
+  -- cmd = {"gopls", "serve", "-rpc.trace", "--debug=localhost:6060"};
   cmd = {'gopls', 'serve'},
   filetypes = {'go', 'gomod', 'gotmpl'},
   root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
@@ -18,6 +20,22 @@ local golang_settings = {
   },
 }
 servers['gopls'] = golang_settings
+
+function orgimports(timeouts)
+  local params = vim.lsp.util.make_range_params()
+  params.context = {only = {"source.organizeImports"}}
+  local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeouts)
+  for _, res in pairs(result or {}) do
+    for _, r in pairs(res.result or {}) do
+      if r.edit then
+        vim.lsp.util.apply_workspace_edit(r.edit)
+      else
+        vim.lsp.buf.execute_command(r.command)
+      end
+    end
+  end
+end
+vim.cmd('autocmd BufWritePre *.go lua orgimports(1000)')
 
 -- key mappings
 local on_attach = function(client, bufnr)
@@ -43,7 +61,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[lsp]f', ':<C-u>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- mapping
+-- setting config
 for lsp, config in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
