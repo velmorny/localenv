@@ -14,8 +14,7 @@ repo = 'tpope/vim-surround'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'preservim/nerdcommenter'
-hook_add = '''
+repo = 'preservim/nerdcommenter' hook_add = '''
 source ~/.config/nvim/lua/plugins/nerdcommenter.lua
 '''
 
@@ -47,5 +46,5 @@ depends = ['plenary.nvim']
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 hook_add = '''
-source ~/.config/nvim/lua/plugins/telescope.lua
+source ~/.config/nvim/lua/plugins/lsp.lua
 '''
