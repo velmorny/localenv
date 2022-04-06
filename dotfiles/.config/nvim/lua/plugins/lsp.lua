@@ -50,6 +50,7 @@ function _G.smart_stab()
     return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<S-Tab>'
 end
 
+vim.api.nvim_set_keymap('i', 'ff', '<C-x><C-o>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true })
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_stab()', { expr = true, noremap = true })
 vim.cmd('autocmd FileType go,gomod,gotmpl setlocal omnifunc=v:lua.vim.lsp.omnifunc')
