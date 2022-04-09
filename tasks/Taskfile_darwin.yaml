@@ -74,6 +74,7 @@ tasks:
       - code --install-extension asvetliakov.vscode-neovim
       - code --install-extension EditorConfig.EditorConfig
       - code --install-extension Rubymaniac.vscode-direnv
+      - code --install-extension ms-vscode-remote.remote-containers
 
   dotfiles:
     cmds:
