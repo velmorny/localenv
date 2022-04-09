@@ -14,9 +14,15 @@ tasks:
       - task: os-tasks:tools
       - task: os-tasks:docker
       - task: os-tasks:google-cloud-sdk
+      - task: os-tasks:vscode
       - task: os-tasks:dotfiles
 
   dotfiles:
     desc: Apply only dotfiles for test
     cmds:
       - task: os-tasks:dotfiles
+
+  vscode:
+    desc: Apply only vscode for test
+    cmds:
+      - task: os-tasks:vscode

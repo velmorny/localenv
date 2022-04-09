@@ -66,6 +66,15 @@ tasks:
       - task: brewinstall
         vars: { NAME: google-cloud-sdk, BREW_FLAGS: '--cask' }
 
+  vscode:
+    cmds:
+      - task: brewinstall
+        vars: { NAME: visual-studio-code, BREW_FLAGS: '--cask' }
+      - code --install-extension harg.iceberg
+      - code --install-extension asvetliakov.vscode-neovim
+      - code --install-extension EditorConfig.EditorConfig
+      - code --install-extension Rubymaniac.vscode-direnv
+
   dotfiles:
     cmds:
       - |
