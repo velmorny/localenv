@@ -48,3 +48,19 @@ repo = 'neovim/nvim-lspconfig'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/lsp.lua
 '''
+
+#[[plugins]]
+#repo = 'hrsh7th/vim-vsnip'
+#hook_add = '''
+#source ~/.config/nvim/lua/plugins/vsnip.lua
+#'''
+#
+#[[plugins]]
+#repo = 'hrsh7th/vim-vsnip-integ'
+#depends = ['vim-vsnip']
+
+[[plugins]]
+repo = 'L3MON4D3/LuaSnip'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/luasnip.lua
+'''

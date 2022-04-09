@@ -51,8 +51,8 @@ function _G.smart_stab()
 end
 
 vim.api.nvim_set_keymap('i', 'ff', '<C-x><C-o>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true })
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_stab()', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('i', '<C-f>', 'v:lua.smart_tab()', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('i', '<C-d>', 'v:lua.smart_stab()', { expr = true, noremap = true })
 vim.cmd('autocmd FileType go,gomod,gotmpl setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
 local on_attach = function(client, bufnr)
