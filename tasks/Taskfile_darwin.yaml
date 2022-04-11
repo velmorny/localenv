@@ -54,6 +54,8 @@ tasks:
       - task: brewinstall
         vars: { NAME: fzf }
       - $(brew --prefix)/opt/fzf/install
+      - task: brewinstall
+        vars: { NAME: pyenv }
 
   docker:
     cmds:
@@ -85,6 +87,7 @@ tasks:
         mkdir -p ~/local/devenv/
         cp -rfP ../dotfiles ~/
         ln -sf ~/dotfiles/apply.sh ~/local/devenv/apply.sh
+        ln -sf ~/dotfiles/pyenv.sh ~/local/devenv/pyenv.sh
         ln -sf ~/dotfiles/.editorconfig ~/.editorconfig
         ln -sf ~/dotfiles/.zshenv ~/.zshenv
         ln -sf ~/dotfiles/.zsh ~/

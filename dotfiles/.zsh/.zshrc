@@ -42,15 +42,16 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 # Flutter
-export PATH="$PATH:~/local/flutter/bin"
+export PATH=$PATH:~/local/flutter/bin
 
 # Setup fzf
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi
-
-# Auto-completion
+## Auto-completion
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
+## Key bindings
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+## Pyenv
+[[ -r ~/local/devenv/pyenv.sh ]] && . ~/local/devenv/pyenv.sh
