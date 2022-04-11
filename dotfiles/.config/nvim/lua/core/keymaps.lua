@@ -1,7 +1,7 @@
 vim.api.nvim_set_keymap('n', '[neovim]', '', { noremap = true })
 vim.api.nvim_set_keymap('n', '  ', '[neovim]', {})
 vim.api.nvim_set_keymap('n', '[neovim]w', ':<C-u>w<CR>', {})
-vim.api.nvim_set_keymap('n', '[neovim]w', ':<C-u>w<CR>', {})
+vim.api.nvim_set_keymap('n', '[neovim]p', ':<C-u>bprev<CR>', {})
 
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { silent = true, noremap = true })
 

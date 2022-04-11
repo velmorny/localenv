@@ -51,6 +51,9 @@ tasks:
         vars: { NAME: ripgrep }
       - task: brewinstall
         vars: { NAME: direnv }
+      - task: brewinstall
+        vars: { NAME: fzf }
+      - $(brew --prefix)/opt/fzf/install
 
   docker:
     cmds:

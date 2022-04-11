@@ -14,7 +14,7 @@ compinit
 # Color
 autoload -Uz colors
 colors
- 
+
 # Load theme
 source $ZDOTDIR/.theme.zsh
 
@@ -37,6 +37,20 @@ setopt hist_reduce_blanks
 # Ignore space
 setopt hist_ignore_space
 
-# Use user local path 
+# Use user local path
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+
+# Flutter
+export PATH="$PATH:~/local/flutter/bin"
+
+# Setup fzf
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+fi
+
+# Auto-completion
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
