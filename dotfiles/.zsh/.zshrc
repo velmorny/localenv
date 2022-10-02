@@ -55,3 +55,7 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
 ## Pyenv
 [[ -r ~/local/devenv/pyenv.sh ]] && . ~/local/devenv/pyenv.sh
+
+## volta to manage node versions
+export VOLTA_HOME=$HOME/.volta
+export PATH=$VOLTA_HOME/bin:$PATH
