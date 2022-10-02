@@ -14,7 +14,8 @@ repo = 'tpope/vim-surround'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'preservim/nerdcommenter' hook_add = '''
+repo = 'preservim/nerdcommenter'
+hook_add = '''
 source ~/.config/nvim/lua/plugins/nerdcommenter.lua
 '''
 
@@ -66,4 +67,10 @@ source ~/.config/nvim/lua/plugins/lsp.lua
 repo = 'L3MON4D3/LuaSnip'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/luasnip.lua
+'''
+
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/dart.lua
 '''
