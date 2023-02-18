@@ -68,9 +68,3 @@ repo = 'L3MON4D3/LuaSnip'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/luasnip.lua
 '''
-
-[[plugins]]
-repo = 'dart-lang/dart-vim-plugin'
-hook_add = '''
-source ~/.config/nvim/lua/plugins/dart.lua
-'''
