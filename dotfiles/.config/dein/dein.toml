@@ -8,6 +8,12 @@ source ~/.config/nvim/lua/plugins/iceberg.lua
 '''
 
 [[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/lualine.lua
+'''
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
