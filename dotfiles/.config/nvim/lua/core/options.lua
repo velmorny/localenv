@@ -1,4 +1,5 @@
 -- Neovim options
+vim.opt.laststatus= 3
 vim.opt.ruler = true
 vim.opt.title = true
 vim.opt.wildmenu = true
