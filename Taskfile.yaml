@@ -26,3 +26,8 @@ tasks:
     desc: Apply only vscode for test
     cmds:
       - task: os-tasks:vscode
+
+  font:
+    decs: Install Hack Gen Nerd font
+    cmds:
+      - task: os-tasks:font

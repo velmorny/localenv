@@ -17,10 +17,5 @@ require("sidebar-nvim").setup({
         attach_shell = "/bin/sh", show_all = true, interval = 5000,
     },
     datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
-    git = { icon = ">" },
-    diagnostics = { icon = ">" },
-    buffers = { icon = ">" },
-    files = { icon = ">" },
-    symbols = { icon = ">" },
     todos = { ignored_paths = { "~" } },
 })

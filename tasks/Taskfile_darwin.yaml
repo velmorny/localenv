@@ -106,3 +106,9 @@ tasks:
         ln -sf ~/dotfiles/.zsh ~/
         ln -sf ~/dotfiles/.config/nvim ~/.config/
         ln -sf ~/dotfiles/.config/dein ~/.config/
+
+  font:
+    cmds:
+      - |
+        brew tap homebrew/cask-fonts
+        brew install font-hackgen-nerd
