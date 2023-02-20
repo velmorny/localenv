@@ -107,3 +107,9 @@ repo = 'L3MON4D3/LuaSnip'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/luasnip.lua
 '''
+
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/term.lua
+'''
