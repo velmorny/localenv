@@ -8,9 +8,7 @@ require("mason-lspconfig").setup {
 require('mason-lspconfig').setup_handlers {
   function(server_name)
     local opt = {
-      capabilities = require('cmp_nvim_lsp').default_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
-      ),
+      capabilities = require('cmp_nvim_lsp').default_capabilities(),
       on_attach = function(client, bufnr)
         local opts = { noremap=true, silent=true }
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '[lsp]', '', { noremap = true })
@@ -31,6 +29,15 @@ require('mason-lspconfig').setup_handlers {
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '[lsp]f', ':<C-u>lua vim.lsp.buf.format({async = true})<CR>', opts)
       end
     }
+    opt.capabilities.textDocument.completion.completionItem.snippetSupport = true
+    if server_name == 'gopls' then
+      opt.settings = {
+        gopls = {
+          completeUnimported = true,
+          usePlaceholders = true
+        }
+      }
+    end
     require('lspconfig')[server_name].setup(opt)
   end
 }

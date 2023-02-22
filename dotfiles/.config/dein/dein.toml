@@ -103,6 +103,10 @@ repo = 'hrsh7th/cmp-buffer'
 repo = 'hrsh7th/cmp-cmdline'
 
 [[plugins]]
+repo = 'saadparwaiz1/cmp_luasnip'
+depends = ['LuaSnip']
+
+[[plugins]]
 repo = 'L3MON4D3/LuaSnip'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/luasnip.lua
