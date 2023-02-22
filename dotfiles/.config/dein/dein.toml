@@ -113,6 +113,10 @@ source ~/.config/nvim/lua/plugins/luasnip.lua
 '''
 
 [[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+depends = ['LuaSnip']
+
+[[plugins]]
 repo = 'akinsho/toggleterm.nvim'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/term.lua

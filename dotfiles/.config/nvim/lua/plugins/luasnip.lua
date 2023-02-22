@@ -8,3 +8,5 @@ local i = ls.insert_node
 local f = ls.function_node
 local c = ls.choice_node
 local d = ls.dynamic_node
+
+require("luasnip.loaders.from_vscode").lazy_load()
