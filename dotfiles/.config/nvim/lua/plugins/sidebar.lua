@@ -18,4 +18,5 @@ require("sidebar-nvim").setup({
     },
     datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
     todos = { ignored_paths = { "~" } },
+    buffers = { ignored_buffers = {"SidebarNvim_*"} },
 })
