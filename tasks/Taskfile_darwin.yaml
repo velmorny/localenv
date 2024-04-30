@@ -20,6 +20,10 @@ tasks:
     desc: Use GNU commands
     cmds:
       - task: brewinstall
+        vars: { NAME: bash }
+      - task: brewinstall
+        vars: { NAME: bash-completion@2 }
+      - task: brewinstall
         vars: { NAME: coreutils }
       - task: brewinstall
         vars: { NAME: diffutils }
@@ -37,6 +41,19 @@ tasks:
         vars: { NAME: grep }
       - task: brewinstall
         vars: { NAME: gzip }
+      - |
+        if [[ "$SHELL" != "$(brew --prefix)/bin/bash" ]]; then
+          sudo dscl . -create "/Users/${USER}" UserShell "$(brew --prefix)/bin/bash"
+        fi
+
+  git:
+    cmds:
+      - task: brewinstall
+        vars: { NAME: git }
+      - touch ~/.gitignore
+      - echo ".DS_Store" > ${HOME}/.gitignore
+      - git config --global core.excludesfile ~/gitignore
+
 
   tools:
     desc: Install tools for development
@@ -58,6 +75,13 @@ tasks:
         vars: { NAME: pyenv }
       - task: java
       - task: volta
+      - task: alacritty
+
+  alacritty:
+    desc: Install alacritty
+    cmds:
+      - task: brewinstall
+        vars: { NAME: alacritty, BREW_FLAGS: '--cask' }
 
   java:
     cmds:
@@ -88,8 +112,6 @@ tasks:
     cmds:
       - task: brewinstall
         vars: { NAME: visual-studio-code, BREW_FLAGS: '--cask' }
-      - code --install-extension harg.iceberg
-      - code --install-extension asvetliakov.vscode-neovim
       - code --install-extension EditorConfig.EditorConfig
       - code --install-extension Rubymaniac.vscode-direnv
       - code --install-extension ms-vscode-remote.remote-containers
@@ -98,14 +120,16 @@ tasks:
     cmds:
       - |
         mkdir -p ~/local/devenv/
-        cp -rfP ../dotfiles ~/
-        ln -sf ~/dotfiles/apply.sh ~/local/devenv/apply.sh
-        ln -sf ~/dotfiles/pyenv.sh ~/local/devenv/pyenv.sh
-        ln -sf ~/dotfiles/.editorconfig ~/.editorconfig
-        ln -sf ~/dotfiles/.zshenv ~/.zshenv
-        ln -sf ~/dotfiles/.zsh ~/
-        ln -sf ~/dotfiles/.config/nvim ~/.config/
-        ln -sf ~/dotfiles/.config/dein ~/.config/
+        cp -rfP ../dotfiles ~/local/
+        ln -sf ~/local/dotfiles/apply.sh ~/local/devenv/apply.sh
+        ln -sf ~/local/dotfiles/pyenv.sh ~/local/devenv/pyenv.sh
+        ln -sf ~/local/dotfiles/.editorconfig ~/.editorconfig
+        ln -sf ~/local/dotfiles/.bashrc ~/.bashrc
+        ln -sf ~/local/dotfiles/.bash_profile ~/.bash_profile
+        ln -sf ~/local/dotfiles/.bash ~/
+        ln -sf ~/local/dotfiles/.config/nvim ~/.config/
+        ln -sf ~/local/dotfiles/.config/dein ~/.config/
+        ln -sf ~/local/dotfiles/.config/alacritty ~/.config/
 
   font:
     cmds:

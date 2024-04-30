@@ -10,11 +10,13 @@ tasks:
   apply:
     desc: Setting up local development environment
     cmds:
+      - task: os-tasks:git
       - task: os-tasks:normalize
       - task: os-tasks:tools
       - task: os-tasks:docker
       - task: os-tasks:google-cloud-sdk
       - task: os-tasks:vscode
+      - task: os-tasks:font
       - task: os-tasks:dotfiles
 
   dotfiles:
@@ -22,12 +24,3 @@ tasks:
     cmds:
       - task: os-tasks:dotfiles
 
-  vscode:
-    desc: Apply only vscode for test
-    cmds:
-      - task: os-tasks:vscode
-
-  font:
-    decs: Install Hack Gen Nerd font
-    cmds:
-      - task: os-tasks:font

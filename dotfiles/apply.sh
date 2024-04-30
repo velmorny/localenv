@@ -1,12 +1,17 @@
 #!/bin/bash
 
-SHELL_TYPE='zsh'
+SHELL_TYPE='bash'
 
 ## for normalize
 brew_prefix="$(brew --prefix)"
 if [[ -z "${brew_prefix}" ]]; then
     brew_prefix='/usr/local'
 fi
+
+basedir="${HOME}/local/devenv"
+bindir="${basedir}/bin"
+
+export PATH="${bindir}:${PATH}"
 
 # coreutils
 export PATH="${brew_prefix}/opt/coreutils/libexec/gnubin:${PATH}"

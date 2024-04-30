@@ -1,0 +1,12 @@
+# alias
+alias ls='ls -G'
+alias la='ls -a -G'
+alias ll='ls -l -G'
+alias lla='ls -la -G'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias vim='nvim'
+alias history='history -E'
+alias chrome='open -a "Google Chrome"'

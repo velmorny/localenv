@@ -1,0 +1,6 @@
+[font]
+normal        = { family = "HackGen35 Console NF", style = "Regular" }
+bold          = { style = "Bold" }
+italic        = { style = "Italic" }
+bold_italic   = { style = "Bold Italic" }
+size          = 12.0

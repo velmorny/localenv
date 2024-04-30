@@ -7,12 +7,16 @@ require("sidebar-nvim").setup({
     bindings = nil,
     open = true,
     side = "left",
-    initial_width = 30,
+    initial_width = 50,
     hide_statusline = false,
     update_interval = 1000,
-    sections = { "git", "diagnostics", "buffers", "files", "symbols" },
+    sections = { "files", "buffers", "symbols", "diagnostics", "git" },
     section_separator = {"", "-----", ""},
     section_title_separator = {""},
+    files = {
+      show_hidden = true,
+      ignored_paths = {"%.DS_Store$"},
+    },
     containers = {
         attach_shell = "/bin/sh", show_all = true, interval = 5000,
     },
