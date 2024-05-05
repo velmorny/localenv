@@ -10,8 +10,13 @@ require'nvim-treesitter.configs'.setup {
     "json",
     "python",
     "terraform",
+    "typescript",
+    "tsx",
   },
   highlight = {
+    enable = true
+  },
+  autotag = {
     enable = true
   }
 }

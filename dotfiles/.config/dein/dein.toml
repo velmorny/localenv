@@ -121,3 +121,6 @@ repo = 'akinsho/toggleterm.nvim'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/term.lua
 '''
+
+[[plugins]]
+repo = 'windwp/nvim-ts-autotag'
