@@ -73,6 +73,8 @@ tasks:
       - $(brew --prefix)/opt/fzf/install
       - task: brewinstall
         vars: { NAME: pyenv }
+      - task: brewinstall
+        vars: { NAME: tmux }
       - task: java
       - task: volta
       - task: alacritty
@@ -130,9 +132,9 @@ tasks:
         ln -sf ~/local/dotfiles/.config/nvim ~/.config/
         ln -sf ~/local/dotfiles/.config/dein ~/.config/
         ln -sf ~/local/dotfiles/.config/alacritty ~/.config/
+        ln -sf ~/local/dotfiles/.tmux.conf ~/
 
   font:
     cmds:
       - |
-        brew tap homebrew/cask-fonts
-        brew install font-hackgen-nerd
+        brew install --cask font-monaspace font-hackgen-nerd
