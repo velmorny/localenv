@@ -1,5 +1,6 @@
 # Bash
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH=/opt/homebrew/bin:$PATH
 # Locale
 export LANG=ja_JP.UTF-8
 # Default editor
