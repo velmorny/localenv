@@ -75,6 +75,8 @@ tasks:
         vars: { NAME: pyenv }
       - task: brewinstall
         vars: { NAME: tmux }
+      - task: brewinstall
+        vars: { NAME: gopls }
       - task: java
       - task: volta
       - task: alacritty
