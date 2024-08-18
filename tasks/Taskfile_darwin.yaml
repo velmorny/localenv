@@ -77,6 +77,8 @@ tasks:
         vars: { NAME: tmux }
       - task: brewinstall
         vars: { NAME: gopls }
+      - task: brewinstall
+        vars: { NAME: deno }
       - task: java
       - task: volta
       - task: alacritty
