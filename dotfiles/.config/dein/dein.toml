@@ -8,6 +8,18 @@ source ~/.config/nvim/lua/plugins/iceberg.lua
 '''
 
 [[plugins]]
+repo = 'shaunsingh/nord.nvim'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/nord.lua
+'''
+
+[[plugins]]
+repo = 'lukas-reineke/headlines.nvim'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/headlines.lua
+'''
+
+[[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 hook_add = '''
 source ~/.config/nvim/lua/plugins/lualine.lua
