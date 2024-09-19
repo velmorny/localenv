@@ -136,3 +136,6 @@ source ~/.config/nvim/lua/plugins/term.lua
 
 [[plugins]]
 repo = 'windwp/nvim-ts-autotag'
+hook_add = '''
+source ~/.config/nvim/lua/plugins/autotag.lua
+'''

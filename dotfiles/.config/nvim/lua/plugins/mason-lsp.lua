@@ -3,7 +3,7 @@ require("mason-lspconfig").setup {
       "lua_ls",
       "gopls",
       "html",
-      "biome"
+      "ts_ls"
     },
 }
 
@@ -39,6 +39,9 @@ require('mason-lspconfig').setup_handlers {
           usePlaceholders = true
         }
       }
+    end
+    if server_name == 'ts_ls' then
+      opt.cmd = { "npx", "typescript-language-server", "--stdio" }
     end
     require('lspconfig')[server_name].setup(opt)
   end

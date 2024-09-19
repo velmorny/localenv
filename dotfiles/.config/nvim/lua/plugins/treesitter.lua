@@ -1,6 +1,8 @@
 require'nvim-treesitter.configs'.setup {
 --  ensure_installed = "maintained",
   ensure_installed = {
+    "html",
+    "css",
     "lua",
     "go",
     "proto",
@@ -16,7 +18,7 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true
   },
-  autotag = {
-    enable = true
-  }
+  -- autotag = {
+  --   enable = true
+  -- }
 }
